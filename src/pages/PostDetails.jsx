@@ -55,7 +55,7 @@ const PostDetails = () => {
                         <p>{new Date(post.updatedAt).toString().slice(16, 24)}</p>
                     </div>
                 </div>
-                <img src={IF + post.photo} alt="" className='w-[50%] mx-auto mt-8' />
+                <img src={ post.photo} alt="" className='w-[50%] mx-auto mt-8' />
                 <p className='mx-auto mt-8'>{post.desc}</p>
                 <div className='flex items-center mt-8 space-x-4 font-semibold'>
                     <p>Categories:</p>
