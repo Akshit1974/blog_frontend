@@ -1,9 +1,12 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 import axios from 'axios';
 import { URL } from "../url.js";
 import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from '../context/UserContext.jsx';
 
 const Register = () => {
+    const { setUser } = useContext(UserContext);
+
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -16,6 +19,7 @@ const Register = () => {
             setEmail(res.data.email)
             setPassword(res.data.password)
             setError(false)
+            setUser(res.data)
             navigate("/")
         } catch (error) {
             setError(true)
